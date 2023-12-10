@@ -117,6 +117,105 @@ body {
   border-radius: 100%;
 }
 
+.timeline{
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+.container{
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+   
+}
+
+@keyframes movedown{
+    0%{
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.container:nth-child(1){
+    animation-delay: 0s;
+}
+
+.container:nth-child(2){
+    animation-delay: 3s;
+}
+
+.container:nth-child(3){
+    animation-delay: 6s;
+}
+
+.text-box{
+    border: 1px solid var(--primary-color);
+    padding: 20px 30px;
+    background: #fff;
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.left-container{
+    left:0;
+}
+.right-container{
+    left:50%;
+}
+
+.dot{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    right: -10px;
+    top: 50px;
+    z-index: 10;
+}
+
+.right-container .dot{ 
+    left: -10px
+}
+
+.timeline::after{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background: black;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    animation: moveline 6s linear forwards;
+}
+@keyframes moveline{
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 100%;
+    }
+}
+.text-box h2{
+    font-weight: 600;
+}
+
+.text-box small{
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+
+
 footer{
     display: flex;
     justify-content: center;
@@ -125,6 +224,10 @@ footer{
     row-gap: 30px;
     background: #F8F8F8;
     padding-block: 40px 60px;
+}
+.hr-line{
+    color: black;
+    width: 80%;
 }
 .top-footer p{
     font-size: 25px;
@@ -145,7 +248,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: height 0.2s, width 0.2s;
+    transition: height 0.5s, width 0.5s;
 }
 
 .footer-social-icons a:hover{
@@ -173,5 +276,28 @@ footer{
 
   .action__btns {
     margin: auto;
+  }
+
+  .timeline{
+    margin: 50px auto;
+  }
+  .timeline::after{
+    left: 30px;
+  }
+  .container{
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 20px;
+  }
+  .right-container{
+    left: 0;
+  }
+
+  .dot{
+    left: 20px;
+  }
+
+  .right-container .dot{
+    left: 20px;
   }
 }
