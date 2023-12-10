@@ -214,6 +214,17 @@ body {
     margin-bottom: 15px;
 }
 
+.skills{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.skills {
+    font-size: 20px;
+}
 
 
 footer{
